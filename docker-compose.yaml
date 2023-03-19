@@ -2,11 +2,11 @@ services:
   db:
     image: postgres:14.7-alpine
     environment:
-      - POSTGRES_PASSWORD='somepass'
-      - POSTGRES_USER='admin'
-      - POSTGRES_DB='test'
+      - POSTGRES_PASSWORD=${DB_PASS:-'somepass'}
+      - POSTGRES_USER=${DB_USER:-'admin'}
+      - POSTGRES_DB=${DB_NAME:-'test'}
     ports:
-      - '5432:5432'
+      - '${DB_EXT_PORT:-5432}:5432'
     volumes:
       - db_data:/var/lib/postgresql/data
 
