@@ -53,6 +53,8 @@ classDiagram
         string title
         string text
     }
+    
+    User--Note
 ```
 
 ## Решение
